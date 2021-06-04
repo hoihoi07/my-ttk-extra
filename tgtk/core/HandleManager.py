@@ -836,7 +836,6 @@ async def booted(client):
     chats = get_val("ALD_USR")
     for i in chats:
         try:
-            await client.send_message(i, "Bot booted successfully!")
         except Exception as e:
 
 def command_process(command):
