@@ -166,6 +166,7 @@ def add_handlers(bot: TelegramClient):
 
     signal.signal(signal.SIGINT, partial(term_handler,client=bot))
     signal.signal(signal.SIGTERM, partial(term_handler,client=bot))
+    bot.loop.run_until_complete(booted(bot))
 
     #*********** Callback Handlers *********** 
     
@@ -831,12 +832,15 @@ def term_handler(signum, frame, client):
             await omess.respond(msg, parse_mode="html")
         exit(0)
 
+    client.loop.run_until_complete(term_async())
 
 async def booted(client):
     chats = get_val("ALD_USR")
     for i in chats:
         try:
+            await client.send_message(i, " ")
         except Exception as e:
+            torlog.info(f"Not found the entity {i}")
 
 def command_process(command):
     return re.compile(command,re.IGNORECASE)
