@@ -425,14 +425,14 @@ async def handle_ext_zip(path, rmess, omess):
             return ext_path
 
 async def errored_message(e, reason):
-    msg = f"<a href='tg://user?id={e.sender_id}'>completed.\n</a>\ndownload failed."
+    msg = f"<a href='tg://user?id={e.sender_id}'>Done</a>\nYour Download Failed.."
     if reason is not None:
         await reason.reply(msg, parse_mode="html")
     else:
         await e.reply(msg, parse_mode="html")
 
 async def print_files(e,files,thash=None, path = None, size=None):
-    msg = f"<a href='tg://user?id={e.sender_id}'>completed.\n</a>"
+    msg = f"<a href='tg://user?id={e.sender_id}'>Source Code 😇</a>\n#uploaded\n"
 
     if path is not None and size is None:
         size = calculate_size(path)
@@ -447,11 +447,11 @@ async def print_files(e,files,thash=None, path = None, size=None):
     msg_li = []
     for i in files.keys():
         link = f'https://t.me/c/{str(chat_id)[4:]}/{files[i]}'
-        if len(msg + f'<a href="{link}">{i}</a>\n') > 4000:
+        if len(msg + f'➩ <a href="{link}">{i}</a>\n') > 4000:
             msg_li.append(msg)
-            msg = f'<a href="{link}">{i}</a>\n'
+            msg = f'➩ <a href="{link}">{i}</a>\n'
         else:
-            msg += f'<a href="{link}">{i}</a>\n'
+            msg += f'➩ <a href="{link}">{i}</a>\n'
 
     for i in msg_li:
         await e.reply(i,parse_mode="html")
