@@ -20,11 +20,11 @@ TIMEOUT_SEC = 60
 # this file will contian all the handlers and code for settings
 # code can be more modular i think but not bothering now
 # todo make the code more modular
-no = "✖"
-yes = "✔"
+no = "❌"
+yes = "✅"
 # Central object is not used its Acknowledged 
 tordb = tkdb()
-header =  '<b>tgtk - a telegram leecher bot.\n</b>\n<u>user settings menu</u>'
+header =  '<b>**TorToolKit** 𝗕𝗬 𝗧𝗲𝗮𝗺 𝗗𝗘𝗩.\n</b>\n<u>user settings menu</u>'
 async def handle_user_setting_callback(e):
     db = tordb
     sender_id = str(e.sender_id)
