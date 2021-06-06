@@ -1,5 +1,5 @@
 class Commands:
-    LEECH = "leechfile"
+    LEECH = "leech"
     PURGE = "purge"
     PAUSEALL = "pauseall"
     RESUMEALL = "resumeall"
@@ -16,6 +16,6 @@ class Commands:
     INSTADL = "instadl"
     START = "start"
     USTATUS = "ustatus"
-    SETTHUMB = "sethumbnail"
-    CLRTHUMB = "clearthumbnail"
+    SETTHUMB = "setthumb"
+    CLRTHUMB = "clearthumb"
     SPEEDTEST = "speedtest"
