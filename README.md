@@ -27,7 +27,7 @@ git push heroku main
 
 (remember to connect github account to heroku account)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hoihoi07/my-ttk-extra)
 
 # Credits
 
